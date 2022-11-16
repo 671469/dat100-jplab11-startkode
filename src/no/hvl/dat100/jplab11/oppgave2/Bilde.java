@@ -4,35 +4,46 @@ import no.hvl.dat100.jplab11.common.TODO;
 
 public class Bilde extends Tekst {
 
-	// TODO - objekt variable
+	private String url;
+	
 	
 	public Bilde(int id, String bruker, String dato, String tekst, String url) {
-		throw new UnsupportedOperationException(TODO.constructor("Bilde"));
+		
+		this.setId(id);       this.setBruker(bruker);
+		this.setDato(dato);   this.setTekst(tekst);
+		this.url  = url;
 	}
 
 	public Bilde(int id, String bruker, String dato, int likes, String tekst, String url) {
-		throw new UnsupportedOperationException(TODO.constructor("Bilde"));
+		this.setId(id);       this.setBruker(bruker);
+		this.setDato(dato);   this.setTekst(tekst);
+		this.url  = url;      this.setLikes(likes);
 	}
 	
 	public String getUrl() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return url;
 	}
 
 	public void setUrl(String url) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.url = url;
 	}
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method ());
 
+		String likesString = Integer.toString(getLikes());
+		String idString = Integer.toString(getId());
+		
+		String svarBilde = "BILDE" + "\n" + idString + "\n" + getBruker()+ "\n" + 
+		       getDato() + "\n" + likesString + "\n" + getTekst() + "\n"+ url + "\n";
+		
+		return svarBilde;
 	}
 
-	// Metoden nedenfor er kun for valgfri oppgave 6
+	/* Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
 		
 		throw new UnsupportedOperationException(TODO.method());
 				
-	}
+	}*/
 }
