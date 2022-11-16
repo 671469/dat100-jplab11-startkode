@@ -23,6 +23,6 @@ public class SkrivBlogg {
 		finally {
 			skriver.close();
 		}
-
+  
 	}
 }
