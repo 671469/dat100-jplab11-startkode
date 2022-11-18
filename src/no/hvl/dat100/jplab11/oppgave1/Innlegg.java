@@ -61,6 +61,10 @@ public abstract class Innlegg {
 	public int getId() {
 		return id;
 		//throw new UnsupportedOperationException(TODO.method());
+	
+	}
+	public void setId(int id) {
+		this.id = id;
 		
 	}
 	
