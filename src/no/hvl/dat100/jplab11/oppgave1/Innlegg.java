@@ -11,25 +11,29 @@ public abstract class Innlegg {
 	
 	
 	
+	public Innlegg() {
+		
+	
+		//throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+	}
+
 	public Innlegg(int id, String bruker, String dato) {
 		
-		this.id =  id;
+		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
 		likes = 0;
 		
+		
 		//throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
 	}
-
 	public Innlegg(int id, String bruker, String dato, int likes) {
-		
-		this.id =  id;
+
+		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
 		this.likes = likes;
 		
-		
-		//throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
 	}
 	
 	public String getBruker() {
@@ -42,7 +46,7 @@ public abstract class Innlegg {
 		this.bruker = bruker;
 		//throw new UnsupportedOperationException(TODO.method());
 	}
-
+	
 	public String getDato() {
 		return dato;
 		//throw new UnsupportedOperationException(TODO.method());
@@ -57,9 +61,9 @@ public abstract class Innlegg {
 	public int getId() {
 		return id;
 		//throw new UnsupportedOperationException(TODO.method());
-
+		
 	}
-
+	
 	public int getLikes() {
 		return likes;
 		//throw new UnsupportedOperationException(TODO.method());
@@ -67,12 +71,17 @@ public abstract class Innlegg {
 	}
 	
 	public void doLike () {
-		this.likes += 1;
+		likes += 1;
 		//throw new UnsupportedOperationException(TODO.method());
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		return (innlegg.getId() == id);
+		if (innlegg.getId()==id) {
+			return true;
+		}
+		else {
+			return false;
+		}
 		
 		//throw new UnsupportedOperationException(TODO.method());
 
@@ -81,17 +90,15 @@ public abstract class Innlegg {
 	@Override
 	public String toString() {
 		
-		String uttekst = id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
+		return id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
 		
-		return uttekst;
 		//throw new UnsupportedOperationException(TODO.method());
 				
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
-	public String toHTML() {
+	//public String toHTML() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		//throw new UnsupportedOperationException(TODO.method());
 				
 	}
-}
