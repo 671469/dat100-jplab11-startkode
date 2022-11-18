@@ -9,24 +9,24 @@ public abstract class Innlegg {
 	protected String dato;
 	protected int likes;
 	
-	public Innlegg() {
-		
-	}
+	
 	
 	public Innlegg(int id, String bruker, String dato) {
+		
 		this.id =  id;
 		this.bruker = bruker;
 		this.dato = dato;
-		this.likes = 0;
+		likes = 0;
 		
 		//throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
+		
 		this.id =  id;
 		this.bruker = bruker;
 		this.dato = dato;
-		this.likes =  likes;
+		this.likes = likes;
 		
 		
 		//throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
@@ -67,12 +67,13 @@ public abstract class Innlegg {
 	}
 	
 	public void doLike () {
-		this.likes++;
+		this.likes += 1;
 		//throw new UnsupportedOperationException(TODO.method());
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		return this.id == innlegg.id;
+		return (innlegg.getId() == id);
+		
 		//throw new UnsupportedOperationException(TODO.method());
 
 	}
@@ -80,8 +81,9 @@ public abstract class Innlegg {
 	@Override
 	public String toString() {
 		
-		String tekst = id + "\n" + dato + "\n" + likes + "\n";
-		return tekst;
+		String uttekst = id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
+		
+		return uttekst;
 		//throw new UnsupportedOperationException(TODO.method());
 				
 	}
